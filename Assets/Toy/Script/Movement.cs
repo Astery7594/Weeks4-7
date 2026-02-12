@@ -7,18 +7,19 @@ public class Movement : MonoBehaviour
     public GameObject bullet;
     public Transform firePoint;
     public float fireRate = 0.2f;
-    public bulletMovement b;
 
     private float nextFireTime = 0f;
+    private float liveTime = 4f;
+    private GameObject bullets;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+       
     }
-
     // Update is called once per frame
     void Update()
     {
+        //Four direction movement
         if (Keyboard.current.wKey.isPressed)
         {
             Vector2 p = transform.position;
@@ -43,20 +44,17 @@ public class Movement : MonoBehaviour
             p.x += speed * Time.deltaTime;
             transform.position = p;
         }
+        //Use space to create bullets
         if (Keyboard.current.spaceKey.isPressed && Time.time >= nextFireTime)
         {
-            Shoot();
+            //Create bullets in a logical frequence (that can change)
+            bullets = Instantiate(bullet, transform.position, Quaternion.identity);
             nextFireTime = Time.time + fireRate;
-            
         }
 
-        
-    }
-    void Shoot()
-    {
-        GameObject bullets = Instantiate(bullet, transform.position, Quaternion.identity);
-        //b.checkOffCamera(bullets);
+        //Destory bullets that missed enemy and disapered off screen though time
+        Destroy(bullets, liveTime);
 
     }
-    
-    }
+
+}

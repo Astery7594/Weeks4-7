@@ -6,20 +6,19 @@ public class bulletMovement : MonoBehaviour
     public float speed = 10f;
     public int damage = 1;
     public GameObject bullet;
-    public Camera mCamera;
-
-    private bool isEnemyBullet = false;
+    public bool isEnemyBullet = false;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        mCamera = Camera.main;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //make bullets MOVE
         if (isEnemyBullet)
         {
             transform.Translate(transform.right * -speed * Time.deltaTime);
@@ -31,16 +30,6 @@ public class bulletMovement : MonoBehaviour
             
         }
         
-
-    }
-    public void checkOffCamera(GameObject b)
-    {
-        Vector3 viewCamera = mCamera.WorldToViewportPoint(transform.position);
-        if (viewCamera.x < -0.1f || viewCamera.x > 1.1f || viewCamera.y < -0.1f || viewCamera.y > 1.1f)
-        {
-            Destroy(b);
-            Debug.Log("destory!");
-        }
     }
 
 }
