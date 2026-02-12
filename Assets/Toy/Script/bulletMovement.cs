@@ -1,4 +1,5 @@
 using UnityEngine;
+using static Movement;
 
 public class bulletMovement : MonoBehaviour
 {
@@ -22,22 +23,23 @@ public class bulletMovement : MonoBehaviour
         if (isEnemyBullet)
         {
             transform.Translate(transform.right * -speed * Time.deltaTime);
-            checkOffCamera();
+            
         }
         else if(isEnemyBullet == false) 
         {
             transform.Translate(transform.right * speed * Time.deltaTime);
-            checkOffCamera();
+            
         }
         
 
     }
-    void checkOffCamera()
+    public void checkOffCamera(GameObject b)
     {
         Vector3 viewCamera = mCamera.WorldToViewportPoint(transform.position);
         if (viewCamera.x < -0.1f || viewCamera.x > 1.1f || viewCamera.y < -0.1f || viewCamera.y > 1.1f)
         {
-            Destroy(bullet);
+            Destroy(b);
+            Debug.Log("destory!");
         }
     }
 

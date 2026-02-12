@@ -47,12 +47,16 @@ public class Movement : MonoBehaviour
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
+            
         }
+
         
     }
     void Shoot()
     {
-        Instantiate(bullet, firePoint.position, firePoint.rotation);
-    }
+        GameObject bullets = Instantiate(bullet, transform.position, Quaternion.identity);
+        //b.checkOffCamera(bullets);
 
-}
+    }
+    
+    }
