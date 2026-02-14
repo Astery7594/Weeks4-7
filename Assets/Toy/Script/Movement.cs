@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     public float fireRate = 0.2f;
 
     private float nextFireTime = 0f;
-    private float liveTime = 4f;
+    private float liveTime = 3f;
     private GameObject bullets;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,6 +18,22 @@ public class Movement : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
+    {
+        MoveSpaceShip();
+        //Use space to create bullets
+        if (Keyboard.current.spaceKey.isPressed && Time.time >= nextFireTime)
+        {
+            //Create bullets in a logical frequence (that can change)
+            bullets = Instantiate(bullet, firePoint.position, Quaternion.identity);
+            nextFireTime = Time.time + fireRate;
+        }
+        //检测到子弹碰撞敌人会消失
+
+        //Destory bullets that missed enemy and disapered off screen though time
+        Destroy(bullets, liveTime);
+
+    }
+    void MoveSpaceShip()
     {
         //Four direction movement
         if (Keyboard.current.wKey.isPressed)
@@ -44,17 +60,6 @@ public class Movement : MonoBehaviour
             p.x += speed * Time.deltaTime;
             transform.position = p;
         }
-        //Use space to create bullets
-        if (Keyboard.current.spaceKey.isPressed && Time.time >= nextFireTime)
-        {
-            //Create bullets in a logical frequence (that can change)
-            bullets = Instantiate(bullet, transform.position, Quaternion.identity);
-            nextFireTime = Time.time + fireRate;
-        }
-
-        //Destory bullets that missed enemy and disapered off screen though time
-        Destroy(bullets, liveTime);
-
     }
 
 }
