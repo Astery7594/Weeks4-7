@@ -8,6 +8,7 @@ public class createEnemy : MonoBehaviour
     public int enemyMaxCount = 4;
     public float eSpeed;
     public SpriteRenderer spriteRenderer;
+    public meteoriteMovement enemyShip;
 
     private float spawnI = 1f;
     private int currentEnemyCount = 0;
@@ -23,24 +24,12 @@ public class createEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        enemyShip.s = nextSpawnTime;
+        enemyShip.sI = spawnI;
+        enemyShip.spawnMeteorite();
     }
 
-    void SpawnEnemy()
-    {
-        //Create enemy in different position
-        Vector2 enemySpawnPlace = new Vector2();
 
-        //create enemy ship and change their outlook
-        GameObject newEnemy = Instantiate(enemy,enemySpawnPlace, Quaternion.identity);
-        spriteRenderer = newEnemy.GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null && enemies.Count>0)
-        {
-            Sprite randomSprite = enemies[Random.Range(0, enemies.Count)];
-            spriteRenderer.sprite = randomSprite;
-        }
-
-    }
 
 
 }

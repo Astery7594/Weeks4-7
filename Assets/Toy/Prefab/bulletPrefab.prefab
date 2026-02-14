@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -123176541705019837, guid: 8bd93ad940345d1439c056ab8cdb42d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,4 +103,6 @@ MonoBehaviour:
   speed: 10
   damage: 1
   bullet: {fileID: 2194292078496920938}
-  mCamera: {fileID: 0}
+  isEnemyBullet: 0
+  isMeteorite: 0
+  mSpeed: 0
