@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
             bullets = Instantiate(bullet, firePoint.position, Quaternion.identity);
             nextFireTime = Time.time + fireRate;
         }
-        //检测到子弹碰撞敌人会消失
+        
 
         //Destory bullets that missed enemy and disapered off screen though time
         Destroy(bullets, liveTime);
