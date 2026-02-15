@@ -13,7 +13,7 @@ public class bulletMovement : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
+    {   //mSpeed is for the meteorite
         mSpeed = Random.Range(0.5f, 3f);
     }
 

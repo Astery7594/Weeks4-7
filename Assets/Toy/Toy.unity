@@ -436,7 +436,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384795922}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69d0b4c03769c2946ad92d19e891aed5, type: 3}
   m_Name: 
@@ -450,7 +450,7 @@ MonoBehaviour:
   enemyMaxCount: 4
   eSpeed: 0
   spriteRenderer: {fileID: 5640353181265665788, guid: 4d5ce73c4117aab48891036025b0f624, type: 3}
-  enemyShip: {fileID: 0}
+  enemySpawn: {fileID: 1646899907}
 --- !u!4 &384795924
 Transform:
   m_ObjectHideFlags: 0
@@ -540,6 +540,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &682261566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 682261568}
+  - component: {fileID: 682261567}
+  m_Layer: 0
+  m_Name: AllCollisionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &682261567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682261566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c036b59a0f4f694da6884fcabaebfc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionDistance: 0.5
+--- !u!4 &682261568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682261566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.52942914, y: 0.19187412, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -776,3 +821,4 @@ SceneRoots:
   - {fileID: 78705732}
   - {fileID: 251223495}
   - {fileID: 657363007}
+  - {fileID: 682261568}

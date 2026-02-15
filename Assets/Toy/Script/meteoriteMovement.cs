@@ -30,7 +30,7 @@ public class meteoriteMovement : MonoBehaviour
         
     }
 
-    public void spawnMeteorite()
+    void spawnMeteorite()
     {
         //give meteorite random position
         Vector2 mPosition= GetRandomPosition();
@@ -56,6 +56,7 @@ public class meteoriteMovement : MonoBehaviour
 
     void CheckAndSpawn()
     {
+        //FindGameObjectsWithTag("")code was learned in Intergration and pipeline class
         GameObject[] allMeteorites = GameObject.FindGameObjectsWithTag("Meteorite");
 
         //if meteorites's number <3,add them to 3
@@ -69,9 +70,9 @@ public class meteoriteMovement : MonoBehaviour
         }
     }
     public Vector2 GetRandomPosition()
-    {
-        Vector2 STR = mCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
-        Vector2 SBR = mCamera.ScreenToWorldPoint(Vector3.zero);
+    {   // let object spawn out side the camera so they can flo
+        Vector2 STR = mCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        Vector2 SBR = mCamera.ScreenToWorldPoint(Vector2.zero);
         float spawnX = STR.x + 1f;
         float minY = SBR.y + 0.5f;
         float maxY = STR.y - 0.5f;

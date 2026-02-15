@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class UI_Stuff : MonoBehaviour
 {
-    public float speed;
-
-    private SpriteRenderer spriteRenderer;
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
