@@ -12,7 +12,7 @@ public class meteoriteMovement : MonoBehaviour
     public float mSpeed;
 
     private float exsitTime = 10f;
-    private int maxMeteorite = 3;
+    private int maxMeteorite=1;
     public float sI = 2f;
     public float s;
     private Camera mCamera;
@@ -80,7 +80,10 @@ public class meteoriteMovement : MonoBehaviour
         Vector2 mPosition = new Vector2(spawnX, randomY);
         return mPosition;
     }
-
+    public void AddMeteorite()
+    {
+        maxMeteorite++;
+    }
     
 
 }
