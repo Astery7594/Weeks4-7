@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db2bc46aabeaa6418c53bf9c4074fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorite: {fileID: 0}
+  meteorite: {fileID: 959675059060402041, guid: 07ce1f97a427b5142aef4640d36d362c, type: 3}
   meteoritesOutlook: []
   spriteRenderer: {fileID: 0}
   mSpeed: 0
