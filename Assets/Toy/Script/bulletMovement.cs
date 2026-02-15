@@ -6,7 +6,6 @@ public class bulletMovement : MonoBehaviour
     public float speed = 10f;
     public int damage = 1;
     public GameObject bullet;
-    public bool isEnemyBullet = false;
     public bool isMeteorite;
     public float mSpeed;
 
@@ -21,12 +20,7 @@ public class bulletMovement : MonoBehaviour
     void Update()
     {
         //make bullets MOVE
-        if (isEnemyBullet)
-        {
-            transform.Translate(transform.right * -speed * Time.deltaTime);
-            
-        }
-        else if (isMeteorite)
+        if (isMeteorite)
         {
             transform.Translate(transform.right * -mSpeed * Time.deltaTime);
         }

@@ -34,16 +34,6 @@ public class AllCollision : MonoBehaviour
                     return;
                 }
                     
-                foreach (GameObject enemite in enemies)
-                {
-                    float distanceOfShip = Vector2.Distance(bullet.transform.position, enemite.transform.position);
-                    if(distanceOfShip < collisionDistance)
-                    {
-                        Destroy(bullet);
-                        Destroy(enemite);
-                    }
-                        
-                }
 
              
             }
